@@ -23,6 +23,8 @@ class Car{
         this.isAvailable=!this.isAvailable
     }
 }
+const car2=newcar('toyota','carmy',2020,true)
+console.log(car1);
 
 
 
@@ -36,7 +38,7 @@ class Car{
 // The Rental class or function constructor should also have a method called
 // calculateRentalDuration that returns the rental duration in days.
 
-class rental{
+class Rental{
     constructor(Car,renterName,renterStartDate){
         this.Car=Car
         this.renterName=renterName
@@ -44,19 +46,19 @@ class rental{
     }
 
 calculateRentalDuration() {
-    const oneDay = 24 * 60 * 60 * 1000; 
+    const oneDay = 24 * 60 * 60 * 1000; // hours * minutes * seconds * milliseconds
     const startDate = new Date(this.rentalStartDate);
     const endDate = new Date(this.rentalEndDate);
-    const diffDays = Math.round(Math.abs((startDate - endDate) / oneDay));
+    const diffDays = Math.round(Math.abs((endDate - startDate) / oneDay));
     return diffDays;
   }
 }
 
 
-const car1 = new Car("Toyota", "LandCruiser", 2020, true);
-const rental1 = new Rental(car1, "subaru", "2021-01-04", "2022-06-25");
-const rentalDuration = rental1.calculateRentalDuration();
-console.log(rentalDuration); 
+// const car1 = new Car("Subaru", "LandCruiser", 2020, true);
+// const rental1 = new Rental(car1, "subaru", "2021-01-04", "2022-06-25");
+// const rentalDuration = rental1.calculateRentalDuration();
+// console.log(rentalDuration); 
 
 
 
@@ -67,6 +69,11 @@ console.log(rentalDuration);
 // inventory. Then, create an instance of the Rental class or function constructor for
 // a rental involving the car you created. Finally, calculate the rental duration using
 // the calculateRentalDuration method.
+const car1 = new Car("Subaru", "LandCruiser", 2020, true);
+const rental1 = new Rental(car1, "subaru", "2021-01-04", "2022-06-25");
+const rentalDuration = rental1.calculateRentalDuration();
+console.log(rentalDuration); 
+
 // Question2
 // You are building a simple quiz app that contains multiple-choice questions. Your task is
 // to create two JavaScript classes: Question and Quiz. The Question class will represent
@@ -87,15 +94,12 @@ class Question{
     }
     checkAnswer(answer){
         return answer === this.correctAnswer;
-
-
-
     }
-
-    
-
 }
-
+const question=new question1("what is the city",["subaru","kampala"],"kampala")
+const userAnswer="kampala"
+const isCorrect=question.checkAnswer(userAnswer)
+console.log(isCorrect);
 
 // 2. Create a Quiz class with the following properties:
 // ● questions(array):An array of Question objects.
