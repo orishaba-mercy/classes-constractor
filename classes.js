@@ -44,7 +44,7 @@ class rental{
     }
 
 calculateRentalDuration() {
-    const oneDay = 24 * 60 * 60 * 1000; // hours * minutes * seconds * milliseconds
+    const oneDay = 24 * 60 * 60 * 1000; 
     const startDate = new Date(this.rentalStartDate);
     const endDate = new Date(this.rentalEndDate);
     const diffDays = Math.round(Math.abs((startDate - endDate) / oneDay));
@@ -54,7 +54,7 @@ calculateRentalDuration() {
 
 
 const car1 = new Car("Toyota", "LandCruiser", 2020, true);
-const rental1 = new Rental(car1, "Bridget", "2022-01-01", "2022-01-25");
+const rental1 = new Rental(car1, "subaru", "2021-01-04", "2022-06-25");
 const rentalDuration = rental1.calculateRentalDuration();
 console.log(rentalDuration); 
 
@@ -134,7 +134,7 @@ class Quiz {
   }
   const question1 = new Question(
     "What is the capital of Uganda?",
-    ["London", "Kampala", "Berlin", "Madrid"],
+    ["nairobi", "Dalsalm", "Berlin", "Kampala"],
    "Kampala"
   );
   console.log(question1)
